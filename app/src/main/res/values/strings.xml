@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Block Cipher</string>
+    <string name="title_home">Block Ciphers</string>
+    <string name="title_dashboard">Profile</string>
+    <string name="title_notifications">Support</string>
+</resources>
