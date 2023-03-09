@@ -1,5 +1,6 @@
 package com.example.blockcipher.ui.home
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -17,6 +19,7 @@ import com.example.blockcipher.R
 
 class EncryptMessageFragment : Fragment() {
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,7 +41,7 @@ class EncryptMessageFragment : Fragment() {
 
             // Call the cipher function with message and key
             val result = when (cipherName) {
-                "AES" -> aesCipher(message, key)
+                "AES" -> AesCipher.encrypt(message, key)
                 "DES" -> desCipher(message, key)
                 "TripleDES" -> tripleDesCipher(message, key)
                 else -> "Invalid cipher"

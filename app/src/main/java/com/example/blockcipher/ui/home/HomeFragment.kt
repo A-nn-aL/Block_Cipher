@@ -51,18 +51,6 @@ class HomeFragment : Fragment(){
         return root
     }
 
-    fun onCipherClick(cipherName: String) {
-        val fragment = EncryptMessageFragment()
-        val args = Bundle()
-        args.putString("cipher", cipherName)
-        fragment.arguments = args
-
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.mobile_navigation, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
